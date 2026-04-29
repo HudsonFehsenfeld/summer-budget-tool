@@ -396,41 +396,41 @@
     const defaultCategories = [
       { group: "Income", name: "Shift Income", type: "income", behavior: "income", planned: 0 },
       { group: "Income", name: "Other Income", type: "income", behavior: "income", planned: 0 },
-      { group: "Savings", name: "Investments", type: "savings", behavior: "savings", planned: 210, goalKey: "investments" },
+      { group: "Savings", name: "Investments", type: "savings", behavior: "savings", planned: 0, goalKey: "investments" },
       { group: "Savings", name: "Roth IRA Funding Pool", type: "savings", behavior: "savings", planned: 0, goalKey: "roth" },
-      { group: "Savings", name: "Vacation Savings", type: "savings", behavior: "savings", planned: 300, goalKey: "vacation" },
+      { group: "Savings", name: "Vacation Savings", type: "savings", behavior: "savings", planned: 0, goalKey: "vacation" },
       { group: "Home", name: "Rent", type: "expense", behavior: "fixed", planned: 0 },
       { group: "Home", name: "Utilities", type: "expense", behavior: "fixed", planned: 0 },
       { group: "Home", name: "Streaming Services", type: "expense", behavior: "fixed", planned: 0 },
-      { group: "Transportation", name: "Gas / Transit", type: "expense", behavior: "fixed", planned: 0 },
+      { group: "Transportation", name: "Gas / Transit", type: "expense", behavior: "fixed", planned: 100 },
       { group: "Transportation", name: "Uber / Rideshare", type: "expense", behavior: "fixed", planned: 0 },
       { group: "Health", name: "Medical Out-of-Pocket", type: "expense", behavior: "fixed", planned: 0 },
-      { group: "Daily Living", name: "Groceries", type: "expense", behavior: "flexible", planned: 200 },
-      { group: "Daily Living", name: "Dining Out / Date Nights", type: "expense", behavior: "flexible", planned: 150 },
+      { group: "Daily Living", name: "Groceries", type: "expense", behavior: "flexible", planned: 150 },
+      { group: "Daily Living", name: "Dining Out / Date Nights", type: "expense", behavior: "flexible", planned: 100 },
       { group: "Entertainment", name: "Fun / Social", type: "expense", behavior: "flexible", planned: 150 },
-      { group: "Entertainment", name: "Clothing / Shoes", type: "expense", behavior: "flexible", planned: 150 },
-      { group: "Entertainment", name: "Hobbies / Recreation", type: "expense", behavior: "flexible", planned: 100 },
+      { group: "Entertainment", name: "Clothing / Shoes", type: "expense", behavior: "flexible", planned: 100 },
+      { group: "Entertainment", name: "Hobbies / Recreation", type: "expense", behavior: "flexible", planned: 25 },
       { group: "Personal and Family", name: "Personal Care", type: "expense", behavior: "flexible", planned: 75 },
-      { group: "Personal and Family", name: "Haircut / Products", type: "expense", behavior: "flexible", planned: 50 },
+      { group: "Personal and Family", name: "Haircut / Products", type: "expense", behavior: "flexible", planned: 25 },
       { group: "Personal and Family", name: "Gifts / Celebrations", type: "expense", behavior: "flexible", planned: 50 },
       { group: "Giving", name: "Charitable Contributions", type: "expense", behavior: "fixed", planned: 0 },
       { group: "Other", name: "Debt / Credit Card Paydown", type: "expense", behavior: "fixed", planned: 0 },
       { group: "Other", name: "Miscellaneous", type: "expense", behavior: "flexible", planned: 50 },
-      { group: "Other", name: "Irregular / Annual Expenses", type: "expense", behavior: "flexible", planned: 150 }
+      { group: "Other", name: "Irregular / Annual Expenses", type: "expense", behavior: "flexible", planned: 0 }
     ];
 
     const defaultGoals = {
       roth: { name: "Roth IRA Funding Pool", target: 7500, current: 0 },
-      investments: { name: "Investments", target: 2500, current: 0 },
-      vacation: { name: "Vacation Fund", target: 3600, current: 0 },
-      hysa: { name: "HYSA", target: 13500, current: 6058 }
+      investments: { name: "Investments", target: 0, current: 0 },
+      vacation: { name: "Vacation Fund", target: 0, current: 0 },
+      hysa: { name: "HYSA", target: 6500, current: 6058 }
     };
 
     function freshState(year) {
       const manualActuals = {}; months.forEach((_, m) => manualActuals[m] = {});
       return {
         year,
-        settings: { hourlyRate: 8, defaultShiftHours: 5.5, shiftsPerWeekGoal: 4, checkingTarget: 1500, hysaTarget: 10000, rothTarget: 7500, surplusToRothPct: 70, backupReminderDays: 7 },
+        settings: { hourlyRate: 8, defaultShiftHours: 5.5, shiftsPerWeekGoal: 4, checkingTarget: 1000, hysaTarget: 6500, rothTarget: 7500, surplusToRothPct: 70, backupReminderDays: 7 },
         categories: JSON.parse(JSON.stringify(defaultCategories)),
         manualActuals,
         shifts: [],
