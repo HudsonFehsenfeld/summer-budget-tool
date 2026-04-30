@@ -558,9 +558,9 @@
       const t = totalsForMonth(selectedMonth); const weekIncome = shiftIncomeForWeek(); const burn = weeklyBurn();
       const cards = [
         ["This Month Shift Income", money(t.actualIncome), `${shiftCountForMonth(selectedMonth)} shifts · tips ${money(shiftTipsForMonth(selectedMonth))}`],
-        ["Monthly Expenses + Savings", money(t.actualExpenses + t.actualSavings), `Planned monthly burn: ${money(t.plannedExpenses + t.plannedSavings)}`],
+        ["Monthly Expenses", money(t.actualExpenses + t.actualSavings), `Planned monthly burn: ${money(t.plannedExpenses + t.plannedSavings)}`],
         ["This Week Surplus", money(weekIncome - burn), `${shiftCountForWeek()} shifts logged · burn target ${money(burn)}`],
-        ["Roth / Extra Investing", money(t.rothOrInvestingAvailable), `${money(t.rothSuggested)} Roth · ${money(t.investingSuggested)} investments`]
+        ["Roth / Investing", money(t.rothOrInvestingAvailable), `${money(t.rothSuggested)} Roth · ${money(t.investingSuggested)} investments`]
       ];
       document.getElementById("summaryCards").innerHTML = cards.map(c => `<div class="card"><div class="metric-title">${c[0]}</div><div class="metric-value">${c[1]}</div><div class="metric-note">${c[2]}</div></div>`).join("");
     }
